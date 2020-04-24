@@ -8,6 +8,10 @@ class AuthService {
     return user != null ? User(uid: user.uid) : null;
   }
 
+  Stream<User> get user {
+    return _auth.onAuthStateChanged.map(_getUserFromFirebaseUser);
+  }
+
   // sign in anonymously
   Future signInAnon() async {
     try {
@@ -15,7 +19,7 @@ class AuthService {
       FirebaseUser user = result.user;
       return _getUserFromFirebaseUser(user);
     } catch (e) {
-      print(e);
+      print(e.toString());
       return null;
     }
   }
@@ -30,7 +34,7 @@ class AuthService {
       FirebaseUser user = result.user;
       return user;
     } catch (e) {
-      print(e);
+      print(e.toString());
       return null;
     }
   }
@@ -45,7 +49,7 @@ class AuthService {
       FirebaseUser user = result.user;
       return user;
     } catch (e) {
-      print(e);
+      print(e.toString());
       return null;
     }
   }
@@ -53,10 +57,9 @@ class AuthService {
   // sign out
   Future signOut() async {
     try {
-      await _auth.signOut();
-      return true;
+      return await _auth.signOut();
     } catch (e) {
-      print(e);
+      print(e.toString());
       return null;
     }
   }
