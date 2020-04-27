@@ -44,7 +44,7 @@ class _RegisterState extends State<Register> {
                         child: Column(
                           children: [
                             SizedBox(height: 20.0),
-                            showUsernameInput(),
+                            _buildUsernameInput(),
                             SizedBox(height: 20.0),
                             _buildEmailInput(),
                             SizedBox(height: 20.0),
@@ -64,10 +64,10 @@ class _RegisterState extends State<Register> {
           );
   }
 
-  TextFormField showUsernameInput() {
+  TextFormField _buildUsernameInput() {
     return TextFormField(
       decoration: textInputDecoration.copyWith(hintText: 'Username'),
-      validator: (val) => val.isEmpty ? 'Email a username' : null,
+      validator: (val) => val.isEmpty ? 'Enter a username' : null,
       onChanged: (val) => setState(() => username = val),
     );
   }
@@ -75,7 +75,7 @@ class _RegisterState extends State<Register> {
   TextFormField _buildEmailInput() {
     return TextFormField(
       decoration: textInputDecoration.copyWith(hintText: 'Email'),
-      validator: (val) => val.isEmpty ? 'Email an email' : null,
+      validator: (val) => val.isEmpty ? 'Enter an email' : null,
       onChanged: (val) => setState(() => email = val),
     );
   }
@@ -99,8 +99,8 @@ class _RegisterState extends State<Register> {
         if (_formKey.currentState.validate()) {
           setState(() => _loading = true);
 
-          dynamic result =
-              await _auth.registerWithEmailAndPassword(email, password);
+          dynamic result = await _auth.registerWithEmailAndPassword(
+              email, password, username);
 
           if (result == null) {
             if (this.mounted) {
