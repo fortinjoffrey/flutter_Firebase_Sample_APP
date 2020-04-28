@@ -1,6 +1,6 @@
 import 'package:firebase_sample_app/services/auth.dart';
 import 'package:firebase_sample_app/shared/AuthHeaderFormRow.dart';
-import 'package:firebase_sample_app/shared/authPrimaryButton.dart';
+import 'package:firebase_sample_app/shared/primaryButton.dart';
 import 'package:firebase_sample_app/shared/constants.dart';
 import 'package:firebase_sample_app/shared/loading.dart';
 import 'package:flutter/material.dart';
@@ -92,8 +92,8 @@ class _RegisterState extends State<Register> {
     );
   }
 
-  AuthPrimaryButton _buildAuthPrimaryButton() {
-    return AuthPrimaryButton(
+  PrimaryButton _buildAuthPrimaryButton() {
+    return PrimaryButton(
       title: "Sign Up",
       onPressed: () async {
         if (_formKey.currentState.validate()) {

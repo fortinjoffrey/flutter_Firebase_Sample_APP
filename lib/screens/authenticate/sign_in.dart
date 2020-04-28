@@ -60,8 +60,8 @@ class _SignInState extends State<SignIn> {
           );
   }
 
-  AuthPrimaryButton _buildAuthPrimaryButton() {
-    return AuthPrimaryButton(
+  PrimaryButton _buildAuthPrimaryButton() {
+    return PrimaryButton(
       title: "Sign In",
       onPressed: () async {
         if (_formKey.currentState.validate()) {
