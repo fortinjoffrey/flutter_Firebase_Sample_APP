@@ -2,6 +2,8 @@ import 'package:firebase_sample_app/models/brew.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'brew_tile.dart';
+
 class BrewList extends StatefulWidget {
   BrewList({Key key}) : super(key: key);
 
@@ -20,6 +22,11 @@ class _BrewListState extends State<BrewList> {
       print(brew.sugars);
     });
 
-    return Container();
+    return ListView.builder(
+      itemCount: brews.length,
+      itemBuilder: (context, index) {
+        return BrewTile(brew: brews[index]);
+      },
+    );
   }
 }
