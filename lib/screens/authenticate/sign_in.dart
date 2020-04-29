@@ -1,6 +1,6 @@
 import 'package:firebase_sample_app/services/auth.dart';
 import 'package:firebase_sample_app/shared/authHeaderFormRow.dart';
-import 'package:firebase_sample_app/shared/authPrimaryButton.dart';
+import 'package:firebase_sample_app/shared/primaryButton.dart';
 import 'package:firebase_sample_app/shared/constants.dart';
 import 'package:firebase_sample_app/shared/loading.dart';
 import 'package:flutter/material.dart';
