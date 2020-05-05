@@ -1,4 +1,4 @@
-import 'package:firebase_sample_app/services/auth.dart';
+import 'package:firebase_sample_app/services/authService.dart';
 import 'package:firebase_sample_app/shared/authHeaderFormRow.dart';
 import 'package:firebase_sample_app/shared/primaryButton.dart';
 import 'package:firebase_sample_app/shared/constants.dart';
@@ -85,6 +85,7 @@ class _SignInState extends State<SignIn> {
 
   TextFormField _buildEmailInput() {
     return TextFormField(
+      keyboardType: TextInputType.emailAddress,
       decoration: textInputDecoration.copyWith(hintText: 'Email'),
       validator: (val) => val.isEmpty ? 'Email an email' : null,
       onChanged: (val) => setState(() => email = val.trim()),

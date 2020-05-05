@@ -14,4 +14,6 @@ This app implements basic code for any future Firebase project.
 <img src="screenshots/3.png" width=45% align="middle">
 <img src="screenshots/4.png" width=45% align="middle">
 <img src="screenshots/5.png" width=45% align="middle">
+<img src="screenshots/6.png" width=45% align="middle">
+<img src="screenshots/7.png" width=45% align="middle">
 </div>

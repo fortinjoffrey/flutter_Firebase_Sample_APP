@@ -1,6 +1,6 @@
 import 'package:firebase_sample_app/models/user.dart';
 import 'package:firebase_sample_app/screens/wrapper.dart';
-import 'package:firebase_sample_app/services/auth.dart';
+import 'package:firebase_sample_app/services/authService.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

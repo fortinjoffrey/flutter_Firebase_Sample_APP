@@ -1,7 +1,7 @@
 import 'package:firebase_sample_app/models/brew.dart';
 import 'package:firebase_sample_app/screens/home/brew_list.dart';
-import 'package:firebase_sample_app/screens/home/settings_form.dart';
-import 'package:firebase_sample_app/services/auth.dart';
+import 'package:firebase_sample_app/screens/home/settings/settings_form.dart';
+import 'package:firebase_sample_app/services/authService.dart';
 import 'package:firebase_sample_app/services/databaseService.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -44,17 +44,15 @@ class Home extends StatelessWidget {
             )
           ],
         ),
-        body: BrewList(),
-        // body: Center(
-        //   child: Container(
-        //     child: RaisedButton(
-        //       child: Text("Sign out"),
-        //       onPressed: () async {
-        //         await AuthService().signOut();
-        //       },
-        //     ),
-        //   ),
-        // ),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/coffee_bg.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: BrewList(),
+        ),
       ),
     );
   }

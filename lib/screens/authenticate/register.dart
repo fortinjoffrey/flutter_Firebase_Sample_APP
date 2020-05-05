@@ -1,4 +1,4 @@
-import 'package:firebase_sample_app/services/auth.dart';
+import 'package:firebase_sample_app/services/authService.dart';
 import 'package:firebase_sample_app/shared/AuthHeaderFormRow.dart';
 import 'package:firebase_sample_app/shared/primaryButton.dart';
 import 'package:firebase_sample_app/shared/constants.dart';
@@ -74,6 +74,7 @@ class _RegisterState extends State<Register> {
 
   TextFormField _buildEmailInput() {
     return TextFormField(
+      keyboardType: TextInputType.emailAddress,
       decoration: textInputDecoration.copyWith(hintText: 'Email'),
       validator: (val) => val.isEmpty ? 'Enter an email' : null,
       onChanged: (val) => setState(() => email = val),
