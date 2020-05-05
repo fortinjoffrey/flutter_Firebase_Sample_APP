@@ -2,9 +2,11 @@
 
 This app implements basic code for any future Firebase project.
 
-### Functionalities (there will be more!) :
+### Functionalities :
 
 - Login/Sign up system
+- List of user's brew preferences
+- Settings page to update preferences
 
 ## Screenshots
 
